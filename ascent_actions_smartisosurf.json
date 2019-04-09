@@ -1,0 +1,73 @@
+[
+  {
+    "action": "add_pipelines",
+    "pipelines": 
+    {
+      "p1": 
+      {
+        "f1": 
+        {
+          "type" : "contour",
+          "params" :
+          {
+            "field" : "Ex",
+            "levels": 15
+          }
+        }
+      },
+      "p2": 
+      {
+        "f1": 
+        {
+          "type" : "contour",
+          "params" :
+          {
+            "field" : "Ex",
+            "levels": 15,
+            "use_contour_tree": "true"
+          }
+        }
+      }
+    }
+  },
+  {
+    "action": "add_scenes",
+    "scenes":
+    {
+      "s1": 
+      {
+        "image_prefix": "levels_%04d",
+        "plots": 
+        {
+          "p1": 
+          {
+            "type": "pseudocolor",
+            "pipeline": "p1",
+            "field": "Ex"
+          }
+        }
+      },
+      "s2": 
+      {
+        "image_prefix": "smart_%04d",
+        "plots": 
+        {
+          "p1": 
+          {
+            "type": "pseudocolor",
+            "pipeline": "p2",
+            "field": "Ex"
+          }
+        }
+      }
+    }
+  },
+
+  {
+    "action": "execute"
+  },
+
+  {
+    "action": "reset"
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "action": "add_pipelines",
+    "pipelines":
+    {
+      "p1":
+      {
+        "f1":
+        {
+          "type" : "threshold",
+          "params" :
+          {
+            "field" : "divB",
+            "min_value" : 25,
+            "max_value": 1000
+          }
+        }
+      }
+    }
+  },
+  {
+    "action": "add_scenes",
+    "scenes":
+    {
+      "s1":
+      {
+        "image_prefix": "threshold_%04d",
+        "plots":
+        {
+          "p1":
+          {
+            "type": "pseudocolor",
+            "pipeline": "p1",
+            "field": "divB"
+          }
+        }
+      }
+    }
+  },
+
+  {
+    "action": "execute"
+  },
+
+  {
+    "action": "reset"
+  }
+]
