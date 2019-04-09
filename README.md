@@ -12,6 +12,7 @@ mpirun -np 1 ../WarpX/Bin/main3d.llvm.TPROF.MPI.OMP.ex inputs.3d
   * Apply for interactive job on compute node
 ```
 salloc -N 1 -C haswell -t 00:30:00 --account=m3090
+```
 
   * Once compute node is available, run with
 ```
